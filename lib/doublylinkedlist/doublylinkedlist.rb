@@ -61,7 +61,7 @@ module Doublylinkedlist
 				end
 
 			else
-				raise RuntimeError, "La lista está vacía"
+				raise RuntimeError, "La lista esta vacia"
 			end
 		end
 		
@@ -79,7 +79,7 @@ module Doublylinkedlist
 				end
 
 			else
-				raise RuntimeError, "La lista está vacía"
+				raise RuntimeError, "La lista esta vacia"
 			end
 		end
 		
@@ -100,7 +100,7 @@ module Doublylinkedlist
 		
 		def posicion (pos)
 		 	if @inicio.nil?
-		 		raise RuntimeError, "La lista está vacía"
+		 		raise RuntimeError, "La lista esta vacia"
 		 	end
 
 		 	if pos<0 || pos>tamano-1
