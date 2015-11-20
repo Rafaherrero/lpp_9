@@ -101,6 +101,12 @@ describe RefBiblio::Referencia do
 			expect(salida).to eq(" 7 9 4 ")
 		end
 	end
+	
+	describe "Probando clase referencia practica 9" do
+		it "Probando comparable menor de fecha" do
+			expect(@libro1<@revista1).to be true
+		end
+	end
 end
 
 describe RefBiblio::Libro do

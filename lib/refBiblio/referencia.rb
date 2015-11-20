@@ -2,7 +2,7 @@ require 'date'
 
 module RefBiblio
 	class Referencia
-
+		include Comparable
 		attr_accessor :autor, :titulo, :editorial, :publicacion
 		def initialize(autor, titulo, editorial, publicacion)
 			#raise ArgumentError, "El autor no es un array" unless autor.is_a?(Array)
@@ -24,6 +24,10 @@ module RefBiblio
 			@titulo = titulo
 			@editorial = editorial
 			@publicacion = publicacion
+		end
+		
+		def <=> (otro)
+			return @publicacion <=> otro.publicacion
 		end
 	end
 	
