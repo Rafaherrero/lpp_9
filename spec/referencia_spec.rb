@@ -202,7 +202,7 @@ end
 describe RefBiblio::ArtRevista do
 	before :each do
 		@revista1 = RefBiblio::ArtRevista.new(["Rafael Herrero","Daniel Ramos"], "Ciencia de hoy", "Grupo Prisa", Date.new(2015,11,17), "Codificacion transversal subatomica en Ruby", 130, ["0395-2037"], ["20","21","22"])
-		@revista2 = RefBiblio::ArtRevista.new(["Gualberto Buela Casal"], "Psicothema", "Dialnet", Date.new(2003,1,1), "Evaluacion de la calidad de los artículos y de las revistas científicas", 15, ["0214-9915"], ["23-35"])
+		@revista2 = RefBiblio::ArtRevista.new(["Gualberto Buela Casal"], "Psicothema", "Dialnet", Date.new(2003,1,1), "Evaluacion de la calidad de los articulos y de las revistas cientificas", 15, ["0214-9915"], ["23-35"])
 	end
 	
 	describe "Debe existir uno o mas autores" do
@@ -250,7 +250,7 @@ describe RefBiblio::ArtRevista do
 	describe "Debe existir un titulo de articulo y hay un metodo para obtenerla" do
 		it "Se almacena el titulo del articulo correctamente" do
 			expect(@revista1.tituloarticulo).to eq("Codificacion transversal subatomica en Ruby")
-			expect(@revista2.tituloarticulo).to eq("Evaluacion de la calidad de los artículos y de las revistas científicas")
+			expect(@revista2.tituloarticulo).to eq("Evaluacion de la calidad de los articulos y de las revistas cientificas")
 		end
 	end
 	
@@ -264,7 +264,7 @@ describe RefBiblio::ArtRevista do
 	describe "Existe un metodo para obtener la referencia formateada" do
 		it "Comprobar el formato de lax revistas" do
 			expect(@revista1.to_s).to eq("Rafael Herrero, Daniel Ramos.\nCiencia de hoy\nGrupo Prisa; (November 17, 2015)\nCodificacion transversal subatomica en Ruby\n130\nISSN: 0395-2037\n20, 21, 22")
-			expect(@revista2.to_s).to eq("Gualberto Buela Casal.\nPsicothema\nDialnet; (January 1, 2003)\nEvaluacion de la calidad de los artículos y de las revistas científicas\n15\nISSN: 0214-9915\n23-35")
+			expect(@revista2.to_s).to eq("Gualberto Buela Casal.\nPsicothema\nDialnet; (January 1, 2003)\nEvaluacion de la calidad de los articulos y de las revistas cientificas\n15\nISSN: 0214-9915\n23-35")
 		end
 	end
 	
