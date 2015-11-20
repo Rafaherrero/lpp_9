@@ -106,6 +106,18 @@ describe RefBiblio::Referencia do
 		it "Probando comparable menor de fecha" do
 			expect(@libro1<@revista1).to be true
 		end
+
+		it "Probando comparable mayor de fecha" do
+			expect(@periodico1>@libro1).to be true
+		end
+		
+		it "Probando comparable menor o igual de fecha" do
+			expect(@periodico1<=@revista1).to be true
+		end
+	
+		it "Probando comparable mayor o igual de fecha" do
+			expect(@documento1>=@revista1).to be true
+		end
 	end
 end
 
