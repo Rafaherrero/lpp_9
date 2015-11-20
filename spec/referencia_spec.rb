@@ -90,6 +90,13 @@ describe RefBiblio::Referencia do
 			expect(@lista3.min.to_s).to eq("2")
 		end
 		
+		it "Probando maximo de lista doblemente enlazada" do
+			@lista3.insertar_inicio(2)
+			@lista3.insertar_inicio(3)
+			@lista3.insertar_inicio(5)
+			expect(@lista3.max.to_s).to eq("5")
+		end
+		
 		it "Probando reverse de lista doblemente enlazada" do
 			@lista3.insertar_inicio(7)
 			@lista3.insertar_inicio(9)
