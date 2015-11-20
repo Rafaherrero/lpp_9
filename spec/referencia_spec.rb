@@ -82,6 +82,24 @@ describe RefBiblio::Referencia do
 			}
 			expect(salida).to eq (" 2 3 5 ")
 		end
+		
+		it "Probando minimo de lista doblemente enlazada" do
+			@lista3.insertar_inicio(2)
+			@lista3.insertar_inicio(3)
+			@lista3.insertar_inicio(5)
+			expect(@lista3.min.to_s).to eq("2")
+		end
+		
+		it "Probando reverse de lista doblemente enlazada" do
+			@lista3.insertar_inicio(7)
+			@lista3.insertar_inicio(9)
+			@lista3.insertar_inicio(4)
+			salida = " "
+			@lista3.reverse_each{|i|
+				salida << i.to_s << " "
+			}
+			expect(salida).to eq(" 7 9 4 ")
+		end
 	end
 end
 
