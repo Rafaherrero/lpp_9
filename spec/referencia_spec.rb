@@ -5,8 +5,8 @@ describe RefBiblio::Referencia do
 		@lista1 = Doublylinkedlist::Doublylinkedlist.new
 		@lista2 = Doublylinkedlist::Doublylinkedlist.new
 		@libro1 = RefBiblio::Libro.new(["Alexby 11","Mangel","Sr Cheeto"], "Salseo Gamer", "Temas de hoy", Date.new(2015,1,1), 1, ["9788499984"])
-		@revista1 = RefBiblio::ArtRevista.new(["Rafael Herrero","Daniel Ramos"], "Ciencia de hoy", "Grupo Prisa", Date.new(2015,11,17), "Codificación transversal subatómica en Ruby", 130, ["0395-2037"], ["20","21","22"])
-		@periodico1 = RefBiblio::ArtPeriodico.new(["Rafael Herrero","Daniel Ramos"], "El Mundo", "Unidad Editorial Información General, S.L.U.", Date.new(2015,11,17), "La regeneracion de las gemas", 130, ["1697-0179"], "Cultura", ["20"])
+		@revista1 = RefBiblio::ArtRevista.new(["Rafael Herrero","Daniel Ramos"], "Ciencia de hoy", "Grupo Prisa", Date.new(2015,11,17), "Codificacion transversal subatomica en Ruby", 130, ["0395-2037"], ["20","21","22"])
+		@periodico1 = RefBiblio::ArtPeriodico.new(["Rafael Herrero","Daniel Ramos"], "El Mundo", "Unidad Editorial Informacion General, S.L.U.", Date.new(2015,11,17), "La regeneracion de las gemas", 130, ["1697-0179"], "Cultura", ["20"])
 		@documento1 = RefBiblio::DocElectronico.new(["Rafael Herrero","Daniel Ramos"], "Oficina de Software Libre de la ULL", "Universidad de La Laguna", Date.new(2015,11,17), "Estudio del habitat de las gemas", 45, ["0001-0045"], "PDF", "http://osl.ull.es/noticias/")
 	end
 	
@@ -42,7 +42,7 @@ describe RefBiblio::Referencia do
 			@lista1.insertar_inicio(@periodico1)
 			@lista1.insertar_inicio(@documento1)
 			@lista1.extraer_inicio()
-			expect(@lista1.to_s).to eq("|Rafael Herrero, Daniel Ramos.\nEl Mundo\nUnidad Editorial Información General, S.L.U.; (November 17, 2015)\nLa regeneracion de las gemas\n130\nISSN: 1697-0179\nSeccion: Cultura\n20, Rafael Herrero, Daniel Ramos.\nCiencia de hoy\nGrupo Prisa; (November 17, 2015)\nCodificación transversal subatómica en Ruby\n130\nISSN: 0395-2037\n20, 21, 22, Alexby 11, Mangel, Sr Cheeto.\nSalseo Gamer\nTemas de hoy; 1 edition (January 1, 2015)\nISBN-10: 9788499984|")
+			expect(@lista1.to_s).to eq("|Rafael Herrero, Daniel Ramos.\nEl Mundo\nUnidad Editorial Informacion General, S.L.U.; (November 17, 2015)\nLa regeneracion de las gemas\n130\nISSN: 1697-0179\nSeccion: Cultura\n20, Rafael Herrero, Daniel Ramos.\nCiencia de hoy\nGrupo Prisa; (November 17, 2015)\nCodificacion transversal subatomica en Ruby\n130\nISSN: 0395-2037\n20, 21, 22, Alexby 11, Mangel, Sr Cheeto.\nSalseo Gamer\nTemas de hoy; 1 edition (January 1, 2015)\nISBN-10: 9788499984|")
 		end
 		
 		it "Extraemos del final" do
@@ -51,7 +51,7 @@ describe RefBiblio::Referencia do
 			@lista1.insertar_final(@periodico1)
 			@lista1.insertar_final(@documento1)
 			@lista1.extraer_final()
-			expect(@lista1.to_s).to eq("|Alexby 11, Mangel, Sr Cheeto.\nSalseo Gamer\nTemas de hoy; 1 edition (January 1, 2015)\nISBN-10: 9788499984, Rafael Herrero, Daniel Ramos.\nCiencia de hoy\nGrupo Prisa; (November 17, 2015)\nCodificación transversal subatómica en Ruby\n130\nISSN: 0395-2037\n20, 21, 22, Rafael Herrero, Daniel Ramos.\nEl Mundo\nUnidad Editorial Información General, S.L.U.; (November 17, 2015)\nLa regeneracion de las gemas\n130\nISSN: 1697-0179\nSeccion: Cultura\n20|")
+			expect(@lista1.to_s).to eq("|Alexby 11, Mangel, Sr Cheeto.\nSalseo Gamer\nTemas de hoy; 1 edition (January 1, 2015)\nISBN-10: 9788499984, Rafael Herrero, Daniel Ramos.\nCiencia de hoy\nGrupo Prisa; (November 17, 2015)\nCodificacion transversal subatomica en Ruby\n130\nISSN: 0395-2037\n20, 21, 22, Rafael Herrero, Daniel Ramos.\nEl Mundo\nUnidad Editorial Informacion General, S.L.U.; (November 17, 2015)\nLa regeneracion de las gemas\n130\nISSN: 1697-0179\nSeccion: Cultura\n20|")
 		end
 	end
 	
@@ -201,8 +201,8 @@ end
 
 describe RefBiblio::ArtRevista do
 	before :each do
-		@revista1 = RefBiblio::ArtRevista.new(["Rafael Herrero","Daniel Ramos"], "Ciencia de hoy", "Grupo Prisa", Date.new(2015,11,17), "Codificación transversal subatómica en Ruby", 130, ["0395-2037"], ["20","21","22"])
-		@revista2 = RefBiblio::ArtRevista.new(["Gualberto Buela Casal"], "Psicothema", "Dialnet", Date.new(2003,1,1), "Evaluación de la calidad de los artículos y de las revistas científicas", 15, ["0214-9915"], ["23-35"])
+		@revista1 = RefBiblio::ArtRevista.new(["Rafael Herrero","Daniel Ramos"], "Ciencia de hoy", "Grupo Prisa", Date.new(2015,11,17), "Codificacion transversal subatomica en Ruby", 130, ["0395-2037"], ["20","21","22"])
+		@revista2 = RefBiblio::ArtRevista.new(["Gualberto Buela Casal"], "Psicothema", "Dialnet", Date.new(2003,1,1), "Evaluacion de la calidad de los artículos y de las revistas científicas", 15, ["0214-9915"], ["23-35"])
 	end
 	
 	describe "Debe existir uno o mas autores" do
@@ -249,8 +249,8 @@ describe RefBiblio::ArtRevista do
 	
 	describe "Debe existir un titulo de articulo y hay un metodo para obtenerla" do
 		it "Se almacena el titulo del articulo correctamente" do
-			expect(@revista1.tituloarticulo).to eq("Codificación transversal subatómica en Ruby")
-			expect(@revista2.tituloarticulo).to eq("Evaluación de la calidad de los artículos y de las revistas científicas")
+			expect(@revista1.tituloarticulo).to eq("Codificacion transversal subatomica en Ruby")
+			expect(@revista2.tituloarticulo).to eq("Evaluacion de la calidad de los artículos y de las revistas científicas")
 		end
 	end
 	
@@ -263,8 +263,8 @@ describe RefBiblio::ArtRevista do
 	
 	describe "Existe un metodo para obtener la referencia formateada" do
 		it "Comprobar el formato de lax revistas" do
-			expect(@revista1.to_s).to eq("Rafael Herrero, Daniel Ramos.\nCiencia de hoy\nGrupo Prisa; (November 17, 2015)\nCodificación transversal subatómica en Ruby\n130\nISSN: 0395-2037\n20, 21, 22")
-			expect(@revista2.to_s).to eq("Gualberto Buela Casal.\nPsicothema\nDialnet; (January 1, 2003)\nEvaluación de la calidad de los artículos y de las revistas científicas\n15\nISSN: 0214-9915\n23-35")
+			expect(@revista1.to_s).to eq("Rafael Herrero, Daniel Ramos.\nCiencia de hoy\nGrupo Prisa; (November 17, 2015)\nCodificacion transversal subatomica en Ruby\n130\nISSN: 0395-2037\n20, 21, 22")
+			expect(@revista2.to_s).to eq("Gualberto Buela Casal.\nPsicothema\nDialnet; (January 1, 2003)\nEvaluacion de la calidad de los artículos y de las revistas científicas\n15\nISSN: 0214-9915\n23-35")
 		end
 	end
 	
@@ -308,7 +308,7 @@ describe RefBiblio::ArtRevista do
 	
 	describe RefBiblio::ArtPeriodico do
 	before :each do
-		@periodico1 = RefBiblio::ArtPeriodico.new(["Rafael Herrero","Daniel Ramos"], "El Mundo", "Unidad Editorial Información General, S.L.U.", Date.new(2015,11,17), "La regeneracion de las gemas", 130, ["1697-0179"], "Cultura", ["20"])
+		@periodico1 = RefBiblio::ArtPeriodico.new(["Rafael Herrero","Daniel Ramos"], "El Mundo", "Unidad Editorial Informacion General, S.L.U.", Date.new(2015,11,17), "La regeneracion de las gemas", 130, ["1697-0179"], "Cultura", ["20"])
 		@periodico2 = RefBiblio::ArtPeriodico.new(["Elvira Lindo"], "El Pais", "Grupo Prisa", Date.new(2015,10,31), "Ser chica Almodovar", 150, ["0213-4608"], "Revista Sabado", ["30-32"])
 	end
 	
@@ -328,7 +328,7 @@ describe RefBiblio::ArtRevista do
 	
 	describe "Debe existir una editorial y hay un metodo para obtenerla" do
 		it "Se almacena correctamente la editorial" do
-			expect(@periodico1.editorial).to eq("Unidad Editorial Información General, S.L.U.")
+			expect(@periodico1.editorial).to eq("Unidad Editorial Informacion General, S.L.U.")
 			expect(@periodico2.editorial).to eq("Grupo Prisa")
 		end
 	end
@@ -370,7 +370,7 @@ describe RefBiblio::ArtRevista do
 	
 	describe "Existe un metodo para obtener la referencia formateada" do
 		it "Comprobar el formato de los periodicos" do
-			expect(@periodico1.to_s).to eq("Rafael Herrero, Daniel Ramos.\nEl Mundo\nUnidad Editorial Información General, S.L.U.; (November 17, 2015)\nLa regeneracion de las gemas\n130\nISSN: 1697-0179\nSeccion: Cultura\n20")
+			expect(@periodico1.to_s).to eq("Rafael Herrero, Daniel Ramos.\nEl Mundo\nUnidad Editorial Informacion General, S.L.U.; (November 17, 2015)\nLa regeneracion de las gemas\n130\nISSN: 1697-0179\nSeccion: Cultura\n20")
 			expect(@periodico2.to_s).to eq("Elvira Lindo.\nEl Pais\nGrupo Prisa; (October 31, 2015)\nSer chica Almodovar\n150\nISSN: 0213-4608\nSeccion: Revista Sabado\n30-32")
 		end
 	end
@@ -420,7 +420,7 @@ end
 describe RefBiblio::DocElectronico do
 	before :each do
 		@documento1 = RefBiblio::DocElectronico.new(["Rafael Herrero","Daniel Ramos"], "Oficina de Software Libre de la ULL", "Universidad de La Laguna", Date.new(2015,11,17), "Estudio del habitat de las gemas", 45, ["0001-0045"], "PDF", "http://osl.ull.es/noticias/")
-		@documento2 = RefBiblio::DocElectronico.new(["Ministerio de Hacienda y Administraciones Publicas"], "BOE. Boletin Oficial del Estado", "Gobierno de España", Date.new(2015,11,17), "Real Decreto 1021/2015, de 13 de noviembre, por el que se establece la obligación de identificar la residencia fiscal de las personas que ostenten la titularidad o el control de determinadas cuentas financieras y de informar acerca de las mismas en el ámbito de la asistencia mutua.", 12399, ["0001-0275"], "PDF", "http://www.boe.es/boe/dias/2015/11/17/pdfs/BOE-A-2015-12399.pdf")
+		@documento2 = RefBiblio::DocElectronico.new(["Ministerio de Hacienda y Administraciones Publicas"], "BOE. Boletin Oficial del Estado", "Gobierno de Espana", Date.new(2015,11,17), "Real Decreto 1021/2015, de 13 de noviembre, por el que se establece la obligacion de identificar la residencia fiscal de las personas que ostenten la titularidad o el control de determinadas cuentas financieras y de informar acerca de las mismas en el ambito de la asistencia mutua.", 12399, ["0001-0275"], "PDF", "http://www.boe.es/boe/dias/2015/11/17/pdfs/BOE-A-2015-12399.pdf")
 	end
 	
 	describe "Debe existir uno o mas autores" do
@@ -440,7 +440,7 @@ describe RefBiblio::DocElectronico do
 	describe "Debe existir una editorial y hay un metodo para obtenerla" do
 		it "Se almacena correctamente la editorial" do
 			expect(@documento1.editorial).to eq("Universidad de La Laguna")
-			expect(@documento2.editorial).to eq("Gobierno de España")
+			expect(@documento2.editorial).to eq("Gobierno de Espana")
 		end
 	end
 	
@@ -454,7 +454,7 @@ describe RefBiblio::DocElectronico do
 	describe "Debe existir un titulo de articulo y hay un metodo para obtenerla" do
 		it "Se almacena el titulo del articulo correctamente" do
 			expect(@documento1.tituloarticulo).to eq("Estudio del habitat de las gemas")
-			expect(@documento2.tituloarticulo).to eq("Real Decreto 1021/2015, de 13 de noviembre, por el que se establece la obligación de identificar la residencia fiscal de las personas que ostenten la titularidad o el control de determinadas cuentas financieras y de informar acerca de las mismas en el ámbito de la asistencia mutua.")
+			expect(@documento2.tituloarticulo).to eq("Real Decreto 1021/2015, de 13 de noviembre, por el que se establece la obligacion de identificar la residencia fiscal de las personas que ostenten la titularidad o el control de determinadas cuentas financieras y de informar acerca de las mismas en el ambito de la asistencia mutua.")
 		end
 	end
 	
@@ -489,7 +489,7 @@ describe RefBiblio::DocElectronico do
 	describe "Existe un metodo para obtener la referencia formateada" do
 		it "Comprobar el formato de los documentos" do
 			expect(@documento1.to_s).to eq("Rafael Herrero, Daniel Ramos.\nOficina de Software Libre de la ULL\nUniversidad de La Laguna; (November 17, 2015)\nEstudio del habitat de las gemas\n45\nISSN: 0001-0045\nFormato: PDF URL: http://osl.ull.es/noticias/\n")
-			expect(@documento2.to_s).to eq("Ministerio de Hacienda y Administraciones Publicas.\nBOE. Boletin Oficial del Estado\nGobierno de España; (November 17, 2015)\nReal Decreto 1021/2015, de 13 de noviembre, por el que se establece la obligación de identificar la residencia fiscal de las personas que ostenten la titularidad o el control de determinadas cuentas financieras y de informar acerca de las mismas en el ámbito de la asistencia mutua.\n12399\nISSN: 0001-0275\nFormato: PDF URL: http://www.boe.es/boe/dias/2015/11/17/pdfs/BOE-A-2015-12399.pdf\n")
+			expect(@documento2.to_s).to eq("Ministerio de Hacienda y Administraciones Publicas.\nBOE. Boletin Oficial del Estado\nGobierno de Espana; (November 17, 2015)\nReal Decreto 1021/2015, de 13 de noviembre, por el que se establece la obligacion de identificar la residencia fiscal de las personas que ostenten la titularidad o el control de determinadas cuentas financieras y de informar acerca de las mismas en el ambito de la asistencia mutua.\n12399\nISSN: 0001-0275\nFormato: PDF URL: http://www.boe.es/boe/dias/2015/11/17/pdfs/BOE-A-2015-12399.pdf\n")
 		end
 	end
 	
