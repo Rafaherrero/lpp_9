@@ -2,7 +2,7 @@ module Doublylinkedlist
 	Struct.new("Nodo", :ant, :valor, :sig)
 
 	class Doublylinkedlist
-	    
+	    include Enumerable
 	    def initialize()
 			@inicio = nil
 			@final = nil
@@ -117,6 +117,13 @@ module Doublylinkedlist
 		 	
 			return copia[:valor]
 		end
-	
+		
+		def each (&block)
+			copia = @inicio
+			while !copia.nil?
+				block.call(copia[:valor])
+				copia = copia[:sig]
+			end
+		end
 	end
 end

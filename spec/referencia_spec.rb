@@ -4,6 +4,7 @@ describe RefBiblio::Referencia do
 	before :each do
 		@lista1 = Doublylinkedlist::Doublylinkedlist.new
 		@lista2 = Doublylinkedlist::Doublylinkedlist.new
+		@lista3 = Doublylinkedlist::Doublylinkedlist.new
 		@libro1 = RefBiblio::Libro.new(["Alexby 11","Mangel","Sr Cheeto"], "Salseo Gamer", "Temas de hoy", Date.new(2015,1,1), 1, ["9788499984"])
 		@revista1 = RefBiblio::ArtRevista.new(["Rafael Herrero","Daniel Ramos"], "Ciencia de hoy", "Grupo Prisa", Date.new(2015,11,17), "Codificacion transversal subatomica en Ruby", 130, ["0395-2037"], ["20","21","22"])
 		@periodico1 = RefBiblio::ArtPeriodico.new(["Rafael Herrero","Daniel Ramos"], "El Mundo", "Unidad Editorial Informacion General, S.L.U.", Date.new(2015,11,17), "La regeneracion de las gemas", 130, ["1697-0179"], "Cultura", ["20"])
@@ -70,7 +71,18 @@ describe RefBiblio::Referencia do
 		end
 	end
 	
-	
+	describe "Probando lista doblemente enlazada practica 9" do
+		it "Probando enumerable lista doblemente enlazada" do
+			@lista3.insertar_inicio(5)
+			@lista3.insertar_inicio(3)
+			@lista3.insertar_inicio(2)
+			salida = " "
+			@lista3.each{|i|
+				salida << i.to_s << " "
+			}
+			expect(salida).to eq (" 2 3 5 ")
+		end
+	end
 end
 
 describe RefBiblio::Libro do

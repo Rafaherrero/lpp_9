@@ -2,6 +2,7 @@ require 'date'
 
 module RefBiblio
 	class Referencia
+
 		attr_accessor :autor, :titulo, :editorial, :publicacion
 		def initialize(autor, titulo, editorial, publicacion)
 			#raise ArgumentError, "El autor no es un array" unless autor.is_a?(Array)
