@@ -27,7 +27,7 @@ module RefBiblio
 		end
 		
 		def <=> (otro)
-			return @publicacion <=> otro.publicacion
+			@publicacion <=> otro.publicacion
 		end
 	end
 	
