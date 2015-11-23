@@ -107,6 +107,16 @@ describe RefBiblio::Referencia do
 			}
 			expect(salida).to eq(" 7 9 4 ")
 		end
+		
+		it "Probando ordenacion de la lista" do
+			@lista3.insertar_inicio(7)
+			@lista3.insertar_inicio(2)
+			@lista3.insertar_inicio(0)
+			@lista3.insertar_inicio(-3)
+			@lista3.insertar_inicio(4)
+			@lista3.insertar_inicio(16)
+			expect(@lista3.sort.to_s).to eq("[-3, 0, 2, 4, 7, 16]")
+		end
 	end
 	
 	describe "Probando clase referencia practica 9" do
